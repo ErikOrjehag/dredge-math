@@ -2,6 +2,7 @@
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 import plot
 import calc
 
@@ -35,7 +36,7 @@ spheres = np.array([
 ])
 
 # Only keep measurements further away
-spheres = spheres[spheres[:,3] > 25]
+spheres = spheres[spheres[:,3] > math.fabs(anchor[2] * 1.5)]
 
 print("measurements", spheres)
 
